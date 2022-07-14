@@ -27,12 +27,17 @@ class MyApp extends StatelessWidget {
           ),
         ),
         useMaterial3: false,
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.pink,
-        ).copyWith(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.pink,
           primary: Colors.pink,
           secondary: Colors.deepPurple,
         ),
+        // ColorScheme.fromSwatch(
+        //   primarySwatch: Colors.pink,
+        // ).copyWith(
+        //   primary: Colors.pink,
+        //   secondary: Colors.deepPurple,
+        // ),
       ),
       home: AuthScreen(),
     );
