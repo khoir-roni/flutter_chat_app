@@ -23,7 +23,7 @@ class ChatScreen extends StatelessWidget {
               itemCount: documents.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Text(documents[index]["text"]),
                 );
                 // final docData = snapshot.data.docs[index].data();
