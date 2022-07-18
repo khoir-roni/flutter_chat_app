@@ -28,8 +28,6 @@ class TimeStampScreen extends StatelessWidget {
           firestore
               .collection('testing')
               .add({'timestamp': Timestamp.fromDate(DateTime.now())});
-
-        
         },
         child: Icon(Icons.add),
       ),
@@ -37,30 +35,30 @@ class TimeStampScreen extends StatelessWidget {
   }
 }
 
-  //      FirebaseFirestore.instance
-          //     .collection("chats/jo6fgCwQ2VbQcYGN9UIl/messages")
-          //     .snapshots()
-          //     .listen((data) {
-          //   data.docs.forEach((element) {
-          //     print(element["text"]);
-          //   });
-          // });
+//      FirebaseFirestore.instance
+//     .collection("chats/jo6fgCwQ2VbQcYGN9UIl/messages")
+//     .snapshots()
+//     .listen((data) {
+//   data.docs.forEach((element) {
+//     print(element["text"]);
+//   });
+// });
 // print(data.docs[0]["text"]);
-            // final textData = [];
-            // for (var doc in event.docs) {
-            //   textData.add(doc.data()["text"]);
-            // }
-            // print("cities in CA: ${textData.join(", \n")}");
-      
-          // firestore
-          //     .collection("testing")
-          //     // .where("state", isEqualTo: "CA")
-          //     .snapshots()
-          //     .listen((event) {
-          //   final docData = [];
-          //   for (var doc in event.docs) {
-          //     final data = (doc.data()["timestamp"] as Timestamp).toDate();
-          //     docData.add(data.toString());
-          //   }
-          //   print("timestamp1: ${docData.join(", \n")}");
-          // });
+// final textData = [];
+// for (var doc in event.docs) {
+//   textData.add(doc.data()["text"]);
+// }
+// print("cities in CA: ${textData.join(", \n")}");
+
+// firestore
+//     .collection("testing")
+//     // .where("state", isEqualTo: "CA")
+//     .snapshots()
+//     .listen((event) {
+//   final docData = [];
+//   for (var doc in event.docs) {
+//     final data = (doc.data()["timestamp"] as Timestamp).toDate();
+//     docData.add(data.toString());
+//   }
+//   print("timestamp1: ${docData.join(", \n")}");
+// });
