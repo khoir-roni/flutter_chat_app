@@ -9,7 +9,7 @@ class NewMessage extends StatefulWidget {
 class _NewMessageState extends State<NewMessage> {
   final _controller = TextEditingController();
   var _enteredMessage = '';
-  void _sendMassege() {
+  void _sendMassage() {
     FocusScope.of(context).unfocus();
     FirebaseFirestore.instance.collection('chat').add({
       'text': _enteredMessage,
@@ -38,7 +38,7 @@ class _NewMessageState extends State<NewMessage> {
             ),
           ),
           IconButton(
-            onPressed: _enteredMessage.trim().isEmpty ? null : _sendMassege,
+            onPressed: _enteredMessage.trim().isEmpty ? null : _sendMassage,
             icon: const Icon(Icons.send),
             color: Theme.of(context).colorScheme.primary,
           )
