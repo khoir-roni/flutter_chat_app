@@ -63,7 +63,6 @@ class ChatScreen extends StatelessWidget {
           NewMessage(),
         ]),
       ),
-     
     );
   }
 }
