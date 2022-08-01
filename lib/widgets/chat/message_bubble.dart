@@ -24,6 +24,7 @@ class MessageBubble extends StatelessWidget {
     );
 
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         Row(
           mainAxisAlignment:
@@ -78,7 +79,6 @@ class MessageBubble extends StatelessWidget {
           ),
         ),
       ],
-      clipBehavior: Clip.none,
     );
   }
 }
