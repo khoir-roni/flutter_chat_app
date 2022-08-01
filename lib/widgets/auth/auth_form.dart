@@ -37,7 +37,7 @@ class _AuthFormsState extends State<AuthForms> {
   void _trySubmit() {
     final isValid = _formKey.currentState.validate();
     FocusScope.of(context).unfocus();
-    if (_userImageFile == null) {
+    if (!_isLogin && _userImageFile == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text("Please pick image"),
