@@ -1,12 +1,39 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/chat/message_widget.dart';
 import '../widgets/chat/new_message.dart';
 
-class ChatScreen extends StatelessWidget {
+class ChatScreen extends StatefulWidget {
   const ChatScreen({Key key}) : super(key: key);
 
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  
+// String _token;
+
+//   Future<void> setupToken() async {
+//     // Get the token each time the application loads
+//     String token = await FirebaseMessaging.instance.getToken();
+
+//     // Save the initial token to the database
+//     await saveTokenToDatabase(token);
+
+//     // Any time the token refreshes, store this in the database too.
+//     FirebaseMessaging.instance.onTokenRefresh.listen(saveTokenToDatabase);
+//   }
+
+//   @override
+//   void initState() {
+//     super.initState();
+    
+//     setupToken();
+//   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,3 +92,19 @@ class ChatScreen extends StatelessWidget {
     );
   }
 }
+
+// Future<void> saveTokenToDatabase(String token) async {
+//   // Assume user is logged in for this example
+//   String userId = FirebaseAuth.instance.currentUser.uid;
+
+//   await FirebaseFirestore.instance
+//     .collection('users')
+//     .doc(userId)
+//     .update({
+//       'tokens': FieldValue.arrayUnion([token]),
+//     });
+// }
+
+
+
+
