@@ -36,6 +36,7 @@ dependencies:
   firebase_storage: ^10.3.4
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^9.7.0
   image_picker: ^0.8.5+3
 
 dev_dependencies:
