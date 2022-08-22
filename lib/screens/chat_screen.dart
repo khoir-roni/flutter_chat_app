@@ -36,21 +36,22 @@ class _ChatScreenState extends State<ChatScreen> {
 
 //     setupToken();
 //   }
-Future<void> _setupPermission () async {
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  Future<void> _setupPermission() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-NotificationSettings settings = await messaging.requestPermission(
-  alert: true,
-  announcement: false,
-  badge: true,
-  carPlay: false,
-  criticalAlert: false,
-  provisional: false,
-  sound: true,
-);
+    NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
 
-print('User granted permission: ${settings.authorizationStatus}');
-}
+    print('User granted permission: ${settings.authorizationStatus}');
+    messaging.subscribeToTopic('chat');
+  }
 
   @override
   void initState() {
@@ -58,11 +59,9 @@ print('User granted permission: ${settings.authorizationStatus}');
     FirebaseMessaging.instance
         .getInitialMessage()
         .then((RemoteMessage message) {
-      if (message != null) {
-        
-       
-      }
+      if (message != null) {}
     });
+    _setupPermission();
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification notification = message.notification;
@@ -88,24 +87,24 @@ print('User granted permission: ${settings.authorizationStatus}');
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       print('A new onMessageOpenedApp event was published!');
-      
-    //    FirebaseMessaging.instance
-    //       .getInitialMessage()
-    //       .then((RemoteMessage message) {
-    //     if (message != null) {
-    //       print(message);
-    //     }
 
-    //     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    //       print('Got a message whilst in the foreground!');
-    //       print('Message data: ${message.data}');
+      //    FirebaseMessaging.instance
+      //       .getInitialMessage()
+      //       .then((RemoteMessage message) {
+      //     if (message != null) {
+      //       print(message);
+      //     }
 
-    //       if (message.notification != null) {
-    //         print(
-    //             'Message also contained a notification: ${message.notification}');
-    //       }
-    //     });
-    //   });
+      //     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      //       print('Got a message whilst in the foreground!');
+      //       print('Message data: ${message.data}');
+
+      //       if (message.notification != null) {
+      //         print(
+      //             'Message also contained a notification: ${message.notification}');
+      //       }
+      //     });
+      //   });
     });
   }
 
@@ -116,6 +115,7 @@ print('User granted permission: ${settings.authorizationStatus}');
         title: const Text('Flutter Chat'),
         actions: [
           DropdownButton(
+            underline: Container(),
             icon: Icon(
               Icons.more_vert,
               color: Theme.of(context).primaryIconTheme.color,
@@ -171,15 +171,5 @@ print('User granted permission: ${settings.authorizationStatus}');
 // Future<void> saveTokenToDatabase(String token) async {
 //   // Assume user is logged in for this example
 //   String userId = FirebaseAuth.instance.currentUser.uid;
-
+//
 //   await FirebaseFirestore.instance
-//     .collection('users')
-//     .doc(userId)
-//     .update({
-//       'tokens': FieldValue.arrayUnion([token]),
-//     });
-// }
-
-
-
-
