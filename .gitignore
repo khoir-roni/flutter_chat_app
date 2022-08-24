@@ -40,7 +40,8 @@ migrate_working_dir/
 
 # firebase
 android/app/google-services.json
-functions/flutter-chat-7893b-firebase-adminsdk-ymr9v-aef74420ee.json
+/functions/flutter-chat-7893b-firebase-adminsdk-ymr9v-aef74420ee.json
+/functions/
 
 
 # Web related
