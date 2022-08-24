@@ -36,8 +36,12 @@ migrate_working_dir/
 !/build/web
 
 
+
+
 # firebase
 android/app/google-services.json
+functions/flutter-chat-7893b-firebase-adminsdk-ymr9v-aef74420ee.json
+
 
 # Web related
 lib/generated_plugin_registrant.dart
